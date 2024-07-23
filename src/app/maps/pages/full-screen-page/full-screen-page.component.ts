@@ -1,5 +1,5 @@
-import { AfterViewInit, Component } from '@angular/core';
-import maplibregl from 'maplibre-gl';
+import { AfterViewInit, Component, ElementRef, ViewChild } from '@angular/core';
+import { Map } from 'maplibre-gl';
 import 'maplibre-gl/dist/maplibre-gl.css';
 
 @Component({
@@ -8,9 +8,13 @@ import 'maplibre-gl/dist/maplibre-gl.css';
   styleUrl: './full-screen-page.component.css',
 })
 export class FullScreenPageComponent implements AfterViewInit {
+  @ViewChild('map') divMap?: ElementRef;
+
   ngAfterViewInit(): void {
-    const map = new maplibregl.Map({
-      container: 'map',
+    if (!this.divMap) throw 'Elemento HTML no encontrado';
+    console.log(this.divMap.nativeElement);
+    const map = new Map({
+      container: this.divMap.nativeElement, //NOTA: la idea es quitar el id="map" del div pero sion el no funciona
       style: 'https://demotiles.maplibre.org/style.json', // stylesheet location
       center: [-74.5, 40], // starting position [lng, lat]
       zoom: 9, // starting zoom

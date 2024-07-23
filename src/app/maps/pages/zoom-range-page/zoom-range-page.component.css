@@ -1,0 +1,47 @@
+#map {
+  width: 100vw;
+  height: 100vh;
+}
+
+.floating-range {
+  position: fixed;
+  bottom: 20px;
+  left: 20px;
+  z-index: 999;
+  width: 500px;
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, .5);
+}
+
+.floating-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.coordinates {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  font-weight: bold;
+}
+
+.floating-content,
+.coordinates {
+  box-sizing: border-box;
+}
+
+.legend {
+  border: solid 1px lightgray;
+  padding: 5px 15px;
+  border-radius: 10px;
+}
+
+.legend:hover {
+  background-color: #0b5ed7;
+  color: #fff;
+  cursor: pointer;
+  transition: all ease-in-out .3s;
+}
+
