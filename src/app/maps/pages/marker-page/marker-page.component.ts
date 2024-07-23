@@ -10,9 +10,10 @@ import 'maplibre-gl/dist/maplibre-gl.css';
 export class MarkerPageComponent {
   @ViewChild('map') divMap?: ElementRef;
 
-  zoom: number = 10;
+  zoom: number = 2;
   map?: Map;
   currentLnglat: LngLat = new LngLat(-74.5, 40);
+  markers: Marker[] = [];
 
   ngAfterViewInit(): void {
     if (!this.divMap) throw 'Elemento HTML no encontrado';
@@ -23,7 +24,41 @@ export class MarkerPageComponent {
       center: this.currentLnglat, // starting position [lng, lat]
       zoom: this.zoom, // starting zoom
     });
+  }
 
-    const marker = new Marker().setLngLat(this.currentLnglat).addTo(this.map);
+  createMarker(): void {
+    if (!this.map) return;
+
+    const color = '#xxxxxx'.replace(/x/g, (y) =>
+      ((Math.random() * 16) | 0).toString(16)
+    );
+    const lngLat = this.map?.getCenter();
+
+    this.addMarker(lngLat, color);
+  }
+
+  addMarker(LngLat: LngLat, color: string):void {
+    if (!this.map) return;
+
+    const marker = new Marker({
+      color: color,
+      draggable: true,
+    })
+      .setLngLat(LngLat)
+      .addTo(this.map);
+
+    this.markers.push(marker);
+  }
+
+  flyTo(marker: Marker): void {
+    this.map?.flyTo({
+      zoom: 5,
+      center: marker.getLngLat()
+    });
+  }
+
+  deleteMarker(pos: number): void {
+    this.markers[pos].remove();
+    this.markers.splice(pos, 1);
   }
 }

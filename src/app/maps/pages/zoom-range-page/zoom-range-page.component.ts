@@ -10,7 +10,7 @@ import 'maplibre-gl/dist/maplibre-gl.css';
 export class ZoomRangePageComponent {
   @ViewChild('map') divMap?: ElementRef;
 
-  zoom: number = 10;
+  zoom: number = 2;
   map?: Map;
   currentLnglat: LngLat = new LngLat(-74.5, 40);
 
