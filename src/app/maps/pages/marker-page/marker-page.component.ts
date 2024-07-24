@@ -17,7 +17,6 @@ export class MarkerPageComponent {
 
   ngAfterViewInit(): void {
     if (!this.divMap) throw 'Elemento HTML no encontrado';
-    console.log(this.divMap.nativeElement);
     this.map = new Map({
       container: this.divMap.nativeElement, //NOTA: la idea es quitar el id="map" del div pero sion el no funciona
       style: 'https://demotiles.maplibre.org/style.json', // stylesheet location
