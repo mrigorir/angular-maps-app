@@ -16,7 +16,7 @@
 ## Image Preview
 ![Screenshot Main Page](./src/assets/images/capture.png)
 
-## :star: [Live Demo](https://stellar-palmier-168a1c.netlify.app/) :star:
+## :star: [Live Demo](https://stellar-palmier-168a1c.netlify.app/maps/fullscreen) :star:
 
 
 ## Getting Started
