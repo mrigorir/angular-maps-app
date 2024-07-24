@@ -16,7 +16,7 @@
 ## Image Preview
 ![Screenshot Main Page](./src/assets/images/capture.png)
 
-## :star: [Live Demo](https://animated-trifle-9d8446.netlify.app) :star:
+## :star: [Live Demo](https://66a17c7122467d55b9257c3e--stellar-palmier-168a1c.netlify.app/) :star:
 
 
 ## Getting Started

@@ -17,7 +17,7 @@ export class FullScreenPageComponent implements AfterViewInit {
       container: this.divMap.nativeElement, //NOTA: la idea es quitar el id="map" del div pero sion el no funciona
       style: 'https://demotiles.maplibre.org/style.json', // stylesheet location
       center: [-74.5, 40], // starting position [lng, lat]
-      zoom: 9, // starting zoom
+      zoom: 2, // starting zoom
     });
   }
 }
