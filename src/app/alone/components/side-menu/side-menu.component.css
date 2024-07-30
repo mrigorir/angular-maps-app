@@ -1,0 +1,12 @@
+.list-group {
+  position: fixed;
+  top: 20px;
+  left: 20px;
+  z-index: 999;
+  width: 180px;
+}
+
+.list-group-item {
+  cursor: pointer;
+  transition: ease all .2s;
+}
